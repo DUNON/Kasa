@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/LOGO.png";
-import "../../components/Header.css";
+import logo from "../assets/img/LOGO.png";
+import "./Header.css";
 
-function Header() {
+export default function Header() {
   return (
     <header className="header_container">
-      <img className="logo" src={logo} alt="logo" />
+      <img className="logo" src={logo} alt="logo Kasa" />
       <nav className="navbar">
-        <Link to="/" >
+        <Link to="/" className="nav_header">
           Accueil
         </Link>
-        <Link to="/about" >
+        <Link to="/about" className="nav_header">
           A propos
         </Link>
       </nav>
     </header>
   );
 }
-
-export default Header;
