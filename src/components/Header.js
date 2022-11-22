@@ -5,11 +5,12 @@ import './Header.css'
 export default function Header() {
   return (
        <header className='header_container'>
-        <img className='logo' src={logo} alt='logo'/>
+        <img className='logo' src={logo} alt='logo Kasa'/>
         <nav className='navbar'>
             <Link to="/" className="nav-header">Accueil</Link>
             <Link to="/about" className="nav-header">A propos</Link>
         </nav>
+        <h2>TEST ds le composant header</h2>
     </header>
   )
 }
