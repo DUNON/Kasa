@@ -10,7 +10,7 @@ const [data, setData] = useState([])
 
 
 useEffect(() => {
-    axios.get("/logements.json").then((res) => setData(res.data)); //requète AXIOS ici également pour prochaine utilisation API
+    axios.get("/logements.json").then((res) => setData(res.data)); 
 }, []);
 
 console.log(data);
@@ -27,7 +27,6 @@ console.log(data);
         {data.map((logement,index) => (
             <div
             key={index}
-            // className={slideAnim.index === index +1 ? "item active-anim" : "item" } >
             className = "item">
             <Slide pictures = {logement.pictures}/>
             <h3>{logement.title}</h3>
