@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
 }
 .banner_img {
     width: 100%;
@@ -16,8 +15,6 @@
     width: 90%;
     max-width: 1600px;
     margin: 40px auto 0;
-    background: crimson;
-
 }
 .item{
     width: 440px;
@@ -27,6 +24,7 @@
 }
 .item img{
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
+    object-fit: cover;
 }

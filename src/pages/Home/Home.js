@@ -1,8 +1,19 @@
-import React from "react";
+import {useState,useEffect} from "react";
+import axios from "axios"
 import banner from "../../assets/img/banner.png";
+import Slide from "../../components/Slide/Slide";
 import "./Home.css";
 
+
 export default function Home() {
+const [data, setData] = useState([])
+
+
+useEffect(() => {
+    axios.get("/logements.json").then((res) => setData(res.data)); //requète AXIOS ici également pour prochaine utilisation API
+}, []);
+
+console.log(data);
   return (
     <>
       <div className="home_container">
@@ -13,43 +24,15 @@ export default function Home() {
         />
       </div>
       <div className="galerie">
-        <div className="item">
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-            alt="galerie"
-          ></img>
-          <h3>Titre de la location</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg"
-            alt="galerie"
-          ></img>
-        </div>
-        <div className="item">
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-            alt="galerie"
-          ></img>
-        </div>
-        <div className="item">
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-            alt="galerie"
-          ></img>
-        </div>
-        <div className="item">
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-            alt="galerie"
-          ></img>
-        </div>
-        <div className="item">
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg"
-            alt="galerie"
-          ></img>
-        </div>
+        {data.map((logement,index) => (
+            <div
+            key={index}
+            // className={slideAnim.index === index +1 ? "item active-anim" : "item" } >
+            className = "item">
+            <Slide pictures = {logement.pictures}/>
+            <h3>{logement.title}</h3>
+          </div>
+        ))}
       </div>
     </>
   );
