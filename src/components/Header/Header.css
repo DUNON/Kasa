@@ -21,3 +21,51 @@
   text-decoration: none;
   font-size: 24px;
 }
+@media (max-width: 992px){
+  .header_container{
+      margin: 20px 20px;
+      width: 85%;
+      padding: 20px;
+      }
+  .logo{
+      height: 45px;
+      width: 145px;
+  }
+  
+  /*Navbar*/
+  .navbar{
+      gap: 15px;
+      display: flex;
+      flex-direction: row;
+  }
+  .navli {
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 142.6%;   
+      text-transform: uppercase;
+  }
+  }
+    
+  /************* Mobile *******************/
+  @media (max-width: 768px){
+  .header_container{
+      padding : 10px;
+    align-items: center;
+      display: flex;
+      margin : 15px 15px;
+      width: 83%;
+  }
+  .navbar{
+      width: 70%;
+      flex-wrap: wrap;
+  }
+  .logo{
+      width: 70%;
+      height: 70%;
+  }
+  .navli {
+      font-size: 12px;
+  } 
+  }

@@ -1,38 +1,35 @@
-import {useState,useEffect} from "react";
-import axios from "axios"
+import { Link } from "react-router-dom";
 import banner from "../../assets/img/banner.png";
-import Slide from "../../components/Slide/Slide";
+import Card from "../../components/Card/Card";
+import useApi from "../../components/useApi/useApi";
 import "./Home.css";
-
+import Footer from '../../components/Footer/Footer';
 
 export default function Home() {
-const [data, setData] = useState([])
+  const { data } = useApi("/logements.json");
 
-
-useEffect(() => {
-    axios.get("/logements.json").then((res) => setData(res.data)); 
-}, []);
-
-console.log(data);
   return (
     <>
       <div className="home_container">
-        <img
-          className="banner_img"
-          src={banner}
-          alt="Chez vous, partout et ailleurs"
-        />
+       
+          <img
+            className="banner_img"
+            src={banner}
+            alt="Chez vous, partout et ailleurs"
+          />
+          <h2 className="banner_title">Chez vous, partout et ailleurs</h2>
+       
       </div>
       <div className="galerie">
-        {data.map((logement,index) => (
-            <div
-            key={index}
-            className = "item">
-            <Slide pictures = {logement.pictures}/>
-            <h3>{logement.title}</h3>
-          </div>
+        {data.map((logement, index) => (
+          <Link className="location_link" to={`/logement/${logement.id}`}>
+            {/* <Slide pictures={logement.pictures} />
+              <h3>{logement.title}</h3> */}
+            <Card cover={logement.cover} title={logement.title} />
+          </Link>
         ))}
       </div>
+      <Footer/>
     </>
   );
 }
