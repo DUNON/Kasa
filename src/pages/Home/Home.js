@@ -9,8 +9,8 @@ export default function Home() {
   const { data } = useApi("/logements.json");
 
   return (
-    <>
-      <div className="home_container">
+    <div className="home_container">
+      <div className="banner">
        
           <img
             className="banner_img"
@@ -30,6 +30,6 @@ export default function Home() {
         ))}
       </div>
       <Footer/>
-    </>
+    </div>
   );
 }

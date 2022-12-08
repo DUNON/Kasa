@@ -4,7 +4,7 @@ import Slide from "../../components/Slide/Slide";
 import useApi from "../../components/useApi/useApi";
 import Rating from "../../components/Rating/Rating";
 import Collapse from "../../components/Collapse/Collapse";
-import Footer from "../../components/Footer/Footer"
+
 export default function Logement() {
   const { logementId } = useParams();
   const { isloading, data } = useApi("/logements.json");
@@ -83,6 +83,6 @@ export default function Logement() {
     </main>
     
   );
-<Footer/>
+
 }
 

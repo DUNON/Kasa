@@ -1,4 +1,8 @@
-.home_container{
+.home_container {
+  background-color : white;
+  padding: 0px 6%;
+}
+.banner{
     display: flex;
     align-items: center;
     justify-content: center;
