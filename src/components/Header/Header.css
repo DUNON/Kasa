@@ -1,71 +1,81 @@
-.header_container{
-  display:flex;
+.header_container {
+  display: flex;
   justify-content: space-between;
   flex-direction: row;
   padding: 40px 6%;
 }
-.logo{
+.logo {
   height: 70px;
 }
- /*Navbar*/
-.navbar{
+/*Navbar*/
+.navbar {
   text-align: right;
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   gap: 50px;
   align-items: center;
 }
-.nav_header{
-  color:#FF6060;
+.nav_header {
+  color: #ff6060;
   font-weight: 500;
   text-decoration: none;
   font-size: 24px;
 }
-@media (max-width: 992px){
-  .header_container{
-      margin: 20px 20px;
-      width: 85%;
-      padding: 20px;
-      }
-  .logo{
-      height: 45px;
-      width: 145px;
+@media (max-width: 992px) {
+  .header_container {
+    margin: 20px 20px;
+    width: 85%;
+    padding: 20px;
   }
-  
+  .logo {
+    height: 45px;
+    width: 145px;
+  }
+
   /*Navbar*/
-  .navbar{
-      gap: 15px;
-      display: flex;
-      flex-direction: row;
+  .navbar {
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
   }
   .navli {
-      font-family: "Montserrat", sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 142.6%;   
-      text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 142.6%;
+    text-transform: uppercase;
   }
-  }
-    
-  /************* Mobile *******************/
-  @media (max-width: 768px){
-  .header_container{
-      padding : 10px;
+}
+
+/************* Mobile *******************/
+@media (max-width: 768px) {
+  .header_container {
+    padding: 10px;
     align-items: center;
-      display: flex;
-      margin : 15px 15px;
-      width: 83%;
+    display: flex;
+    margin: 15px 15px;
+    width: 83%;
   }
-  .navbar{
-      width: 70%;
-      flex-wrap: wrap;
+  .navbar {
+    width: 70%;
+    flex-wrap: wrap;
   }
-  .logo{
-      width: 70%;
-      height: 70%;
+  .logo {
+    width: 30%;
+    height: 50%;
+    margin-left: 20px;
   }
   .navli {
-      font-size: 12px;
-  } 
+    font-size: 12px;
   }
+}
+
+@media (max-width: 450px) {
+  .nav_header {
+    color: #ff6060;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
