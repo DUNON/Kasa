@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import "./Logement.css";
-import Slide from "../../components/Slide/Slide";
+import Gallery from "../../components/Gallery/Gallery";
 import useApi from "../../components/useApi/useApi";
 import Rating from "../../components/Rating/Rating";
 import Collapse from "../../components/Collapse/Collapse";
@@ -27,7 +27,7 @@ export default function Logement() {
           <p>en cours de chargement</p>
         ) : (
           <section>
-            <Slide pictures={appart.pictures} />
+            <Gallery pictures={appart.pictures} />
 
             <div className="logement">
               <div className="logement_header">

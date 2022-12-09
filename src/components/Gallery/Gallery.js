@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react";
-import "./Slide.css";
+import "./Gallery.css";
 import chevronDroit from "../../assets/img/chevron_droit.png"
 import chevronGauche from "../../assets/img/chevron_gauche.png"
 
@@ -27,7 +27,7 @@ export default function Slide({pictures}) {
     
   return (
     <div className="slide">
-     <img className="mainImg" src={pictures[index]}></img>
+     <img className="mainImg" src={pictures[index]} alt="gallery"></img>
      <div className="actions">
         <button onClick={prev}><img src={chevronGauche} className='chevronLeft' alt="previous"></img></button>
         <button onClick={next}><img src={chevronDroit} className='chevronRight' alt="next"></img></button>   
