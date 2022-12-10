@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import "./Logement.css";
 import Gallery from "../../components/Gallery/Gallery";
 import useApi from "../../components/useApi/useApi";
@@ -7,9 +7,13 @@ import Collapse from "../../components/Collapse/Collapse";
 import Footer from "../../components/Footer/Footer";
 
 
+
+
 export default function Logement() {
   const { logementId } = useParams();
   const { isloading, data } = useApi("/logements.json");
+  let navigate = useNavigate();
+  
 
   const getLogementId = (data, logementId) => {
     for (let logement of data) {
@@ -23,9 +27,7 @@ export default function Logement() {
   return (
     <>
       <main className="logement_container">
-        {isloading === true ? (
-          <p>en cours de chargement</p>
-        ) : (
+        {appart && !isloading ? (
           <section>
             <Gallery pictures={appart.pictures} />
 
@@ -82,6 +84,12 @@ export default function Logement() {
               </div>
             </div>
           </section>
+
+         
+        ) : (
+          // <p>en cours de chargement</p>
+          navigate('/*')
+          // <Error></Error>
         )}
       </main>
       <Footer/>
