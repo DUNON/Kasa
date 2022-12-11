@@ -1,19 +1,15 @@
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Logement.css";
 import Gallery from "../../components/Gallery/Gallery";
 import useApi from "../../components/useApi/useApi";
 import Rating from "../../components/Rating/Rating";
 import Collapse from "../../components/Collapse/Collapse";
 import Footer from "../../components/Footer/Footer";
-
-
-
+import Error from "../../components/Error/Error";
 
 export default function Logement() {
   const { logementId } = useParams();
   const { isloading, data } = useApi("/logements.json");
-  let navigate = useNavigate();
-  
 
   const getLogementId = (data, logementId) => {
     for (let logement of data) {
@@ -23,6 +19,9 @@ export default function Logement() {
     }
   };
   const appart = getLogementId(data, logementId);
+  if (!appart) {
+    return <Error />;
+  }
 
   return (
     <>
@@ -84,15 +83,11 @@ export default function Logement() {
               </div>
             </div>
           </section>
-
-         
         ) : (
-          // <p>en cours de chargement</p>
-          navigate('/*')
-          // <Error></Error>
+          <p>chargement en cours !!</p>
         )}
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
