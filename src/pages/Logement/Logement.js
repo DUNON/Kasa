@@ -19,7 +19,7 @@ export default function Logement() {
     }
   };
   const appart = getLogementId(data, logementId);
-  if (!appart) {
+  if (!appart ) {
     return <Error />;
   }
 

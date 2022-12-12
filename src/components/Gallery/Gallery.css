@@ -49,6 +49,13 @@
   .chevronRight{
     height: 70%;
   }
+  .carousel_Index{
+    position: absolute;
+    left: 49%;
+    font-size: 18px;
+    bottom: 24px;
+    color: white;
+}
    /************* Mobile *******************/
    @media (max-width: 768px){
     .slide{

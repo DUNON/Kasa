@@ -5,6 +5,7 @@ import chevronGauche from "../../assets/img/chevron_gauche.png"
 
 export default function Slide({pictures}) {
     const [index, setIndex] = useState(0)
+    const length = pictures.length;
     useEffect(() => {
      setIndex(0)
     }, [])
@@ -32,6 +33,7 @@ export default function Slide({pictures}) {
         <button onClick={prev}><img src={chevronGauche} className='chevronLeft' alt="previous"></img></button>
         <button onClick={next}><img src={chevronDroit} className='chevronRight' alt="next"></img></button>   
      </div>
+     <div className='carousel_Index'>{index +1} / {length}</div>
     </div>
   );
 }
